@@ -1,7 +1,7 @@
 <?php if (!defined('FLUX_ROOT')) exit;
 
 require_once Flux::config('jii_lib_dir'). 'jiiSystem/jiilib.php';
-load_helper('xssClean');
+load_helper('xssclean');
 
 
 $PostsTable   = Flux::config('FluxTables.PostsTable');

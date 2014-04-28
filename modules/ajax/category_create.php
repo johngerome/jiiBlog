@@ -1,7 +1,7 @@
 <?php if (!defined('FLUX_ROOT')) exit;
 
 require_once Flux::config('jii_lib_dir'). 'jiiSystem/jiilib.php';
-load_helper(array('url', 'xssClean'));
+load_helper(array('url', 'xssclean'));
 
 $category	= Flux::config('FluxTables.CategoryTable');
 
