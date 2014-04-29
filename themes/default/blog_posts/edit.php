@@ -4,7 +4,6 @@ if (!defined('FLUX_ROOT')) exit;
 include str_replace("\\", "/", dirname(dirname(__FILE__))) .'/init.php';
    
 ?>
->
 
 <link href="<?php echo $bpath.'assets/css/bootstrap.css'; ?>" rel="stylesheet">
 <link href="<?php echo $bpath.'assets/css/style.css'; ?>" rel="stylesheet">
