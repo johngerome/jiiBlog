@@ -48,7 +48,7 @@ include str_replace("\\", "/", dirname(dirname(__FILE__))) .'/init.php';
 					spTitle = aData[1];
 				}
 
-				$( 'td:eq(1)', nRow ).html( "<a href=\"<?php echo htmlspecialchars($this->url('post', 'edit', array('post_id' => '') )) ?>" + aData[0] + "\"><b>" + spTitle + "</b></a>" );
+				$( 'td:eq(1)', nRow ).html( "<a href=\"<?php echo htmlspecialchars($this->url('blog_posts', 'view', array('post_id' => '') )) ?>" + aData[0] + "\"><b>" + spTitle + "</b></a>" );
 
 
 				//  Tags

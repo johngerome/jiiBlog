@@ -1,26 +1,25 @@
-<?php 
-if (!defined('FLUX_ROOT')) exit;
-?>           
-<h2><?php echo htmlspecialchars(Flux::message('NewsHomeTitle')) ?></h2>
-<?php if($news): ?>
-<div class="newsDiv">
-	<?php foreach($news as $nrow):?>
-		<h4><span class="<?php echo getCat($nrow->category) ?>"><small><?php echo ucfirst(word_limiter(getCat($nrow->category), 1)) ?></small></span> <?php echo $nrow->title ?></h4>
-		<div class="newsCont">
-			<span class="newsDate"><small>by <?php echo $nrow->author ?> on <?php echo date('m-d-y',strtotime($nrow->created))?></small></span>
-			<p><?php echo $nrow->body ?></p>
-			<?php if($nrow->created != $nrow->modified):?>
-				<small><?php echo htmlspecialchars(Flux::message('ModifiedLabel')) ?> : <?php echo date('m-d-y',strtotime($nrow->modified))?></small>
-			<?php endif; ?>
-			<?php if($nrow->link): ?>
-				<a class="news_link" href="<?php echo $nrow->link ?>"><small><?php echo htmlspecialchars(Flux::message('NewsLink')) ?></small></a>
-				<div class="clear"></div>
-			<?php endif; ?>
+<?php
+if (!defined('FLUX_ROOT')) exit; 
+
+include str_replace("\\", "/", dirname(dirname(__FILE__))) .'/init.php';
+   
+?>
+
+<link href="<?php echo $bpath.'assets/css/bootstrap.css'; ?>" rel="stylesheet">
+
+<div id="jiiBlog">
+<div class="posts">
+	<?php foreach($posts as $post): ?>
+	<div class="post">
+		<h1 class="post__title">lorem Ipsum Dolor</h1>
+		<p class="post__contents">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, provident, placeat assumenda ratione aliquid recusandae optio dolores laborum praesentium molestiae. Veritatis, quidem quos eaque saepe deserunt dolore nam amet fuga!</p>
+		<div class="post__info">
+			<ul class="list-inline">
+				<li>Author: <?php echo $blogModel->postAuthor($post->author_id, $post->author_alias, $post->allow_author_alias); ?></li>
+			</ul>
 		</div>
-	<?php endforeach; ?> 
+	</div>
+	<?php endforeach; ?>
 </div>
-<?php else: ?>
-	<p>
-		<?php echo htmlspecialchars(Flux::message('NewsEmpty')) ?><br/><br/>
-	</p>
-<?php endif ?>
+</div>
+
