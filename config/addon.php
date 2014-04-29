@@ -1,6 +1,6 @@
 <?php
 return array(
-	
+
 	'LimitItem' 			=> 4,		// Default value on how many items to show on home page.
 	'CommentLimit'			=> 5,		// Default Value on How Many Comments will show on every post.	
 	
@@ -14,6 +14,9 @@ return array(
 
 	// Don't touch beyond this line. for DEVELOPERS ONLY
 	'jii_lib_dir'	=> dirname(dirname(__FILE__)). '/lib/',
+
+	'release_api'		  =>  'https://api.github.com/repos/johngerome/jiiBlog/releases',
+	'version'					=>	'pre-v0.1-betas', //Current Version
 
     'FluxTables' => array(
         'PostsTable'    => 'jii_blog_posts',

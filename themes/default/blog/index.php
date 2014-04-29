@@ -8,12 +8,27 @@ include str_replace("\\", "/", dirname(dirname(__FILE__))) .'/init.php';
 <link href="<?php echo $bpath.'assets/vendor/font-awesome/css/font-awesome.min.css'; ?>" rel="stylesheet">
 <link href="<?php echo $bpath.'assets/css/style.css'; ?>" rel="stylesheet">
 
+<script>
+$(document).ready(function(){
+    $.getJSON("<?php echo Flux::config('release_api'); ?>", function(result) {
+      $.each(result, function(i, version) {
+      	if(version.name != "<?php echo Flux::config('version'); ?>"){
+      			$(".js-blog-version").html("jiiBlog <strong>" +version.name + "</strong> is available! Please download the latest version <a href=\"https://github.com/johngerome/jiiBlog/releases/\" target=\"_blank\">here</a> now.").show();
+      	}
+      	else
+      	{
+      			$(".js-blog-version").hide();
+      	}
+      });
 
+    });
+});
+</script>
 
 <div id="jiiBlog">
 <div class="row">
 <div class="col-lg-12">
-	<div class="alert alert-warning">jiiBlog 3.7 is available! Please update now.</div>
+	<div class="alert alert-warning js-blog-version"></div>
 
 	<div class="col-lg-3 col-md-2 big-btn">
 		<span class="badge badge-primary big-btn-badge"><?php echo $posts->total ?></span>
@@ -36,12 +51,12 @@ include str_replace("\\", "/", dirname(dirname(__FILE__))) .'/init.php';
 			<b>Tags</b>
 		</a>
 	</div>
-	<div class="col-lg-3 col-md-2 big-btn">
+<!-- 	<div class="col-lg-3 col-md-2 big-btn">
 		<a href="<?php echo $this->url('blog_comments') ?>">
 			<h1><i class="icon-comment"></i></h1>
 			<b>Comments</b>
 		</a>
-	</div>
+	</div> -->
 	<div class="col-lg-3 col-md-2 big-btn">
 		<a href="<?php echo $this->url('blog_settings') ?>">
 			<h1><i class="icon-cog"></i></h1>
