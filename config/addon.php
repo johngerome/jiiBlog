@@ -16,7 +16,7 @@ return array(
 	'jii_lib_dir'	=> dirname(dirname(__FILE__)). '/lib/',
 
 	'release_api'		  =>  'https://api.github.com/repos/johngerome/jiiBlog/releases',
-	'version'					=>	'pre-v0.1-betas', //Current Version
+	'version'					=>	'pre-v0.1-beta', //Current Version
 
     'FluxTables' => array(
         'PostsTable'    => 'jii_blog_posts',
