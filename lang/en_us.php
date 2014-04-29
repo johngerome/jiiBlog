@@ -1,6 +1,7 @@
 <?php
 
 return array(
+	'BlogManagement'		=>	'Blog Management',
 	'Save'							=>	'Save',
 	'Update'						=>	'Update',
 	'Name'							=>	'Name',
